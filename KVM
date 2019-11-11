@@ -5,40 +5,40 @@ virsh console nroject
 user :root
 psssword:123456
 
-2.lsmod ²éÑ¯ÄÚºË²ÎÊı
-ps -efww ²é¿´ÏêÏ¸PID
+2.lsmod æŸ¥è¯¢å†…æ ¸å‚æ•°
+ps -efww æŸ¥çœ‹è¯¦ç»†PID
 
-    3.ÃüÁîList ÁĞ³öĞéÄâ»ú #]virsh list --all
-start|shutdown|reboot ĞéÄâ»úÆô¶¯ Í£Ö¹ ÖØÆô
-destory Ç¿ÖÆÍ£Ö¹ĞéÄâ»ú
-define|undefine ¸ù¾İxmlÎÄ¼ş ´´½¨ É¾³ıĞéÄâ»ú
-console Á´½ÓĞéÄâ»úµÄ¿ØÖÆ½çÃæ #]virsh console nsd1907
-eip 20 ĞŞ¸Äip rebootÖØÆô
+    3.å‘½ä»¤List åˆ—å‡ºè™šæ‹Ÿæœº #]virsh list --all
+start|shutdown|reboot è™šæ‹Ÿæœºå¯åŠ¨ åœæ­¢ é‡å¯
+destory å¼ºåˆ¶åœæ­¢è™šæ‹Ÿæœº
+define|undefine æ ¹æ®xmlæ–‡ä»¶ åˆ›å»º åˆ é™¤è™šæ‹Ÿæœº
+console é“¾æ¥è™šæ‹Ÿæœºçš„æ§åˆ¶ç•Œé¢ #]virsh console kvm01
+eip 20 ä¿®æ”¹ip rebooté‡å¯
 
-   edit ĞŞ¸ÄĞéÄâ»úÅäÖÃ virsh edit nsd1907
-autostart ÉèÖÃĞéÄâ»ú×ÔÆô
-domiflist ²é¿´ĞéÄâ»úÍø¿¨ĞÅÏ¢
-domblklist ²é¿´ĞéÄâ»úÓ²ÅÌĞÅÏ¢
+   edit ä¿®æ”¹è™šæ‹Ÿæœºé…ç½® virsh edit kvm01
+autostart è®¾ç½®è™šæ‹Ÿæœºè‡ªå¯
+domiflist æŸ¥çœ‹è™šæ‹Ÿæœºç½‘å¡ä¿¡æ¯
+domblklist æŸ¥çœ‹è™šæ‹Ÿæœºç¡¬ç›˜ä¿¡æ¯
 cd /var/lib/libvirt/images
 qemu-img info tedu_node51.img
-virsh nodeinfo ²é¿´cpu ÄÚ´æĞÅÏ¢
+virsh nodeinfo æŸ¥çœ‹cpu å†…å­˜ä¿¡æ¯
 
-ÃüÁîÇ°¼ÓÉÏnet²é¿´ÍøÂç½»»»»úĞÅÏ¢ºÍĞŞ¸Ä½»»»»úÅäÖÃ
-Èç: virsh net-list --all
-    Virsh net-edit Íø¿¨ÃûÈç:vbr
-    Virsh net-define vbrµÈ
-
-
-3.Ô¶³Ì¿ØÖÆ·şÎñÆ÷²é¿´µçÔ´:ipmitool -I lanplus -U root -H ·şÎñÆ÷ip power status
-¿ªÆô·şÎñÆ÷µçÔ´:ipmitool -I lanplus -U root -H ·şÎñÆ÷ip power on
-¹Ø±Õ·şÎñÆ÷µçÔ´:ipmitool -I lanplus -U root -H ·şÎñÆ÷ip power off
-ÖØÆô·şÎñÆ÷µçÔ´:ipmitool -I lanplus -U root -H ·şÎñÆ÷ip power reset
-Ô¶³Ì¹ÜÀí:ipmitool -I lanplus -U root -H ·şÎñÆ÷ip sol activate
-
-Íø¿¨ĞÅÏ¢:cd /etc/sysconfig/network-scripts/
+å‘½ä»¤å‰åŠ ä¸ŠnetæŸ¥çœ‹ç½‘ç»œäº¤æ¢æœºä¿¡æ¯å’Œä¿®æ”¹äº¤æ¢æœºé…ç½®
+å¦‚: virsh net-list --all
+    Virsh net-edit ç½‘å¡åå¦‚:vbr
+    Virsh net-define vbrç­‰
 
 
-´´½¨ĞéÄâ»ú:
+3.è¿œç¨‹æ§åˆ¶æœåŠ¡å™¨æŸ¥çœ‹ç”µæº:ipmitool -I lanplus -U root -H æœåŠ¡å™¨ip power status
+å¼€å¯æœåŠ¡å™¨ç”µæº:ipmitool -I lanplus -U root -H æœåŠ¡å™¨ip power on
+å…³é—­æœåŠ¡å™¨ç”µæº:ipmitool -I lanplus -U root -H æœåŠ¡å™¨ip power off
+é‡å¯æœåŠ¡å™¨ç”µæº:ipmitool -I lanplus -U root -H æœåŠ¡å™¨ip power reset
+è¿œç¨‹ç®¡ç†:ipmitool -I lanplus -U root -H æœåŠ¡å™¨ip sol activate
+
+ç½‘å¡ä¿¡æ¯:cd /etc/sysconfig/network-scripts/
+
+
+åˆ›å»ºè™šæ‹Ÿæœº:
 cd /var/lib/libvirt/images/
 qemu-img create -b .node_base.qcow2 -f qcow2 openstack 50G
 cp .node_base.xml /etc/libvirt/qemu/openstack.xml
@@ -46,45 +46,45 @@ vim /etc/libvirt/qemu/openstack.xml
 virsh define /etc/libvirt/qemu/openstack.xml
 virsh start openstack
 
-virsh À©Èİ´ÅÅÌ
+virsh æ‰©å®¹ç£ç›˜
  
-Õæ»úÉÏ²Ù×÷1 2²½:
-1.²éÕÒÒªÀ©ÈİµÄ´ÅÅÌµØÖ·
+çœŸæœºä¸Šæ“ä½œ1 2æ­¥:
+1.æŸ¥æ‰¾è¦æ‰©å®¹çš„ç£ç›˜åœ°å€
  virsh domblklist nsd1907
 
-2.À©Èİ´ÅÅÌ
+2.æ‰©å®¹ç£ç›˜
  virsh blockresize --path /var/lib/libvirt/images/nsd1907.img --size 50G nsd1907
 
-½øÈ¥ĞéÄâ»úÀïÃæ²Ù×÷ÈçÏÂÁ½²½:
-3.·ÖÇøÀ©Èİ
+è¿›å»è™šæ‹Ÿæœºé‡Œé¢æ“ä½œå¦‚ä¸‹ä¸¤æ­¥:
+3.åˆ†åŒºæ‰©å®¹
  lsblk
 growpart /dev/vda 1
 
-4 ÎÄ¼şÏµÍ³À©Èİ
+4 æ–‡ä»¶ç³»ç»Ÿæ‰©å®¹
 xfs_growfs /
 
-Ê±¼ä·şÎñÆ÷
-²é¿´ÊÇ·ñÍ¬²½: chronyc sources -v
+æ—¶é—´æœåŠ¡å™¨
+æŸ¥çœ‹æ˜¯å¦åŒæ­¥: chronyc sources -v
 
 watch -n 1 'virsh list --name'
 
 
-·ÖÆÁ
+åˆ†å±
 yum -y install screen
 }#screen
-ÏÈctrl+AºóÔÙshift+s ºáÇĞ
+å…ˆctrl+Aåå†shift+s æ¨ªåˆ‡
 
-ctrl+A |  Êú×ÅÇĞ
+ctrl+A |  ç«–ç€åˆ‡
 
-ctrl+A + n ´´½¨²¢Í¬²½Ò»¸ö´°¿Ú
+ctrl+A + n åˆ›å»ºå¹¶åŒæ­¥ä¸€ä¸ªçª—å£
 
-Crtl+A + c ĞÂ½¨Ò»¸ö´°¿Ú²¢ÇĞ»»µ½µ±Ç°´°¿Ú
+Crtl+A + c æ–°å»ºä¸€ä¸ªçª—å£å¹¶åˆ‡æ¢åˆ°å½“å‰çª—å£
 
-ctrl+A + table ÇĞ»»·ÖÆÁ
+ctrl+A + table åˆ‡æ¢åˆ†å±
 
-ctrl+A shift+x É¾³ı·ÖÆÁ
+ctrl+A shift+x åˆ é™¤åˆ†å±
 
-ctrl+A ¿Õ¸ñ Ñ­»·ÇĞ»»´°¿Ú
+ctrl+A ç©ºæ ¼ å¾ªç¯åˆ‡æ¢çª—å£
 
-ctrl+A k ¹Ø±Õ´°¿Ú
+ctrl+A k å…³é—­çª—å£
 
